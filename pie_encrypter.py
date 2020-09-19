@@ -46,17 +46,18 @@ def encrypt(key, e_string):
 test_message = input("Type the message to encrypt "
                      "\n(English only, supports all "
                      "\nalphabets, numbers and "
-                     "\nsymbols)                  :")
+                     "\nsymbols)                  : ")
 def encrypter():
     try:
-        encryption_key = input("Give a six digit numeric only key to encrypt: ")
+        encryption_key = input("Give a numeric only key to encrypt: ")
         int(encryption_key)
-        if len(encryption_key) != 6:
-            print("Please enter a 6 digit numeric only key")
-        else:
+        if int(encryption_key) <= 999999 and int(encryption_key) >= 10000:
             test = encrypt(int(encryption_key), test_message)
             print("Encrypted Message:", test)
             print("Length of the encrypted message: ", len(test))
+        else:
+            print("Please enter a numeric only key up to 6 digits with no signs")
+            encrypter()
     except:
         print("Please input numeric only key")
         encrypter()

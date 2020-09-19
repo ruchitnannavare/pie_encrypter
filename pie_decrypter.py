@@ -50,7 +50,7 @@ def decrypt(key, d_string):
 def decrypting():
     try:
         test = input("Please enter message to be decrypted here : ")
-        decryption_key = input("Give a six digit numeric only key to decrypt: ")
+        decryption_key = input("Give a numeric only key to decrypt: ")
         print("Decrypting...")
         print("Decrypted message:", decrypt(int(decryption_key), test))
         print("Decryption successful!")
